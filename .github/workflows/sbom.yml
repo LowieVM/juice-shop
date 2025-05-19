@@ -23,10 +23,10 @@ jobs:
         run: npm install
 
       - name: Install CycloneDX generator
-        run: npm install -g @cyclonedx/bom
+        run: npm install @cyclonedx/bom
 
       - name: Generate SBOM
-        run: cyclonedx-bom -o sbom.json
+        run: npx cyclonedx-bom -o sbom.json
 
       - name: Upload SBOM artifact
         uses: actions/upload-artifact@v4
